@@ -140,9 +140,6 @@ function runCommand(cmd, args, options) {
       )
     )
 
-    spawn.on('error',err=>{
-      console.log(err);
-    });
     spwan.on('exit', () => {
       resolve()
     })
