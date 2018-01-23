@@ -44,7 +44,7 @@ exports.checkHG = function checkHG(
 ) {
   console.log(`\n\n# ${color('正在检出HG ...')}`)
   console.log('# ========================\n')
-  return runCommand(executable, ['run', 'hg'], {
+  return runCommand('npm', ['run', 'hg'], {
     cwd,
   })
 }
@@ -140,6 +140,9 @@ function runCommand(cmd, args, options) {
       )
     )
 
+    spawn.on('error',err=>{
+      console.log(err);
+    });
     spwan.on('exit', () => {
       resolve()
     })
