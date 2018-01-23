@@ -59,10 +59,27 @@ module.exports = {
       choices: [
         {
           name: '是的',
-          value: 'npm',
-          short: 'npm',
+          value: 'hg',
+          short: 'hg',
         },
         {
+          name: '不，我自己会的',
+          value: false,
+          short: 'no',
+        }
+      ],
+    },
+    autoInstall: {
+      when: 'isNotTest',
+      type: 'list',
+      message:
+        '是否在创建完成后就帮你安装依赖以快速开始项目',
+      choices: [
+        {
+          name: 'Yes, use NPM',
+          value: 'npm',
+          short: 'npm',
+        },        {
           name: 'Yes, use Yarn',
           value: 'yarn',
           short: 'yarn',
@@ -71,25 +88,7 @@ module.exports = {
           name: 'No, I will handle that myself',
           value: false,
           short: 'no',
-        },
-      ],
-    },
-    autoInstall: {
-      when: 'isNotTest',
-      type: 'list',
-      message:
-        'Should we run `npm install` for you after the project has been created? (recommended)',
-      choices: [
-        {
-          name: 'Yes, use NPM',
-          value: 'hg',
-          short: 'hg',
-        },
-        {
-          name: '不，我自己会的',
-          value: false,
-          short: 'no',
-        },
+        }
       ],
     }
   },
