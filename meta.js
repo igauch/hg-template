@@ -114,30 +114,32 @@ module.exports = {
     const cwd = path.join(process.cwd(), data.inPlace ? '' : data.destDirName)
 
     if (data.autoCheckHG) {
-      checkHG(cwd, data.autoInstall, green)
+      checkHG(cwd, data.autoCheckHG, green)
         .then(() => {
-          printMessage(data, green)
+          autoInstall();
         })
         .catch(e => {
           console.log(chalk.red('Error:'), e)
         })
     } else {
-      printMessage(data, chalk)
+      autoInstall();
     }
 
-    if (data.autoInstall) {
-      installDependencies(cwd, data.autoInstall, green)
-        .then(() => {
-          return runLintFix(cwd, data, green)
-        })
-        .then(() => {
-          printMessage(data, green)
-        })
-        .catch(e => {
-          console.log(chalk.red('Error:'), e)
-        })
-    } else {
-      printMessage(data, chalk)
+    function autoInstall() {
+      if (data.autoInstall) {
+        installDependencies(cwd, data.autoInstall, green)
+          .then(() => {
+            return runLintFix(cwd, data, green)
+          })
+          .then(() => {
+            printMessage(data, green)
+          })
+          .catch(e => {
+            console.log(chalk.red('Error:'), e)
+          })
+      } else {
+        printMessage(data, chalk)
+      }
     }
   },
 };
