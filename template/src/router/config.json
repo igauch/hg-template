@@ -1,0 +1,44 @@
+{
+    "path": "/",
+    "name": "root",
+    "redirect": "HG1",
+    "children": [
+        {
+            "path": "HG1",
+            "name": "HG1",
+            "meta": {
+                "title": "HG1"
+            }
+        },
+        {
+            "path": "HG2",
+            "name": "HG2",
+            "meta": {
+                "title": "HG2"
+            },
+            "children": [
+                {
+                    "path": "HG21",
+                    "name": "HG21",
+                    "meta": {
+                        "title": "HG21"
+                    }
+                },
+                {
+                    "path": "HG22",
+                    "name": "HG22",
+                    "meta": {
+                        "title": "HG22"
+                    }
+                }
+            ]
+        },
+        {
+            "path": "HG3",
+            "name": "HG3",
+            "meta": {
+                "title": "HG3"
+            }
+        }
+    ]
+}
