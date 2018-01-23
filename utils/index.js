@@ -44,7 +44,7 @@ exports.checkHG = function checkHG(
 ) {
   console.log(`\n\n# ${color('正在检出HG ...')}`)
   console.log('# ========================\n')
-  return runCommand(executable, ['run hg'], {
+  return runCommand(executable, ['run', 'hg'], {
     cwd,
   })
 }
