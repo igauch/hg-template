@@ -2,7 +2,7 @@
   <div id="app" class="d-flex flex-column">
     <top-bar></top-bar>
     <div class="d-flex flex-1">
-      <el-sidenav :routerIndex="0" class="text-white bg-primary"></el-sidenav>
+      <hg-sidenav :routerIndex="0" class="text-white bg-primary"></hg-sidenav>
       <!--todo flex-->
       <div class="flex-1 mx-2 mb-2 main-vf d-flex flex-column">
         <!--<h-breadcrumb class="ml-3 font-weight-bold"></h-breadcrumb>-->

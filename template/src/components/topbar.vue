@@ -8,14 +8,14 @@
         </router-link>
       </div>
       <div class="user-info float-right" v-if="user.id">
-        <el-dropdown trigger="click">
+        <hg-dropdown trigger="click">
             <span class="el-dropdown-link" v-if="user.name">
               欢迎你，{{user.name}}
             </span>
-          <el-dropdown-menu slot="dropdown">
-            <el-dropdown-item @click.native="logout">注销</el-dropdown-item>
-          </el-dropdown-menu>
-        </el-dropdown>
+          <hg-dropdown-menu slot="dropdown">
+            <hg-dropdown-item @click.native="logout">注销</hg-dropdown-item>
+          </hg-dropdown-menu>
+        </hg-dropdown>
       </div>
     </div>
   </header>
