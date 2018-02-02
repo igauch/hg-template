@@ -19,5 +19,6 @@ export let router = new Router({
 
 router.beforeEach((to, from, next) => {
     // 修改body的class，方便区分不同页面的样式差异
-  document.getElementsByTagName('body')[0].className=to.name.replace(/([A-Z])/g, "-$1").replace(/^-(.*)/,'$1').toLowerCase();
+  document.getElementsByTagName('body')[0].className=to.name.replace(/([A-Z])/g, "-$1").replace(/^-/,'').toLowerCase();
+  next();
 });
